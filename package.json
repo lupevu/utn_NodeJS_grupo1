@@ -1,0 +1,23 @@
+{
+  "name": "practicofinal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "helmet": "^4.6.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "description": "Parte Primera del Proyecto Final del curso \"Diplomatura en programacion web full stack con React JS\" dictado por el Centro de e-Learning de la Universidad Tecnológica Nacional - Facultad Regional Buenos Aires - UTN.BA"
+}
