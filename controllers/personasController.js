@@ -53,22 +53,22 @@ personasController.personaGetId = async(req, res, next) => {
 personasController.personaAdd = async(req, res, next) => {
     try {        
         // Valido nombre tenga contenido y sea STRING
-        if(!req.body.nombre || typeof req.body.nombre === undefined || !/[a-z]+$/i.test(req.body.nombre.trim())){
+        if(!req.body.nombre || (req.body.nombre && !/[a-z]+$/i.test(req.body.nombre.trim()))){
             return res.status(413).json({ 'Error': 'El nombre es obligatorio, debe contener solo letras y no puede estar vacío'});
         }
         
         //Valido apellido tenga contenido y sea STRING
-        if(!req.body.apellido || !/[a-z]+$/i.test(req.body.apellido.trim())){
+        if(!req.body.apellido || (req.body.apellido && !/[a-z]+$/i.test(req.body.apellido.trim()))){        
             return res.status(413).json({ 'Error': 'El apellido es obligatorio, debe contener solo letras y no puede estar vacío'});
         }
 
         //Valido alias tenga contenido y sea STRING
-        if(!req.body.alias || !/[a-z]+$/i.test(req.body.alias.trim())){
+        if(!req.body.alias || (req.body.alias && !/[a-z]+$/i.test(req.body.alias.trim()))){
             return res.status(413).json({ 'Error': 'El alias es obligatorio, debe contener solo letras y no puede estar vacío'});
         }
 
         //Valido la estructura del email
-        if(!/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(req.body.email)){
+        if(!req.body.email || (req.body.email && !/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(req.body.email))){
             return res.status(413).json({ 'Error': 'El email es obligatorio y debe tener cierta estructura: ejemplo@ejemplo.com'});
         }
         

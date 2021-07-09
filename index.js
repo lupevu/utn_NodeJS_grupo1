@@ -8,9 +8,6 @@ require('dotenv').config({ path: 'variables.env' });
 const port=process.env.PORT|| 8888;
 const host=process.env.HOST||'0.0.0.0';
 
-//app.use(express.urlencoded()); //body formulario
-//app.use(express.json()); // body en formato json
-
 const db = require('./config/db');
 
 db.authenticate()

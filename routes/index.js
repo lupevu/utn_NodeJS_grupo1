@@ -3,16 +3,12 @@ const express = require('express');
 const router = express.Router();
 
 //Importamos los controladores
-const homeController = require('../controllers/homeController');
 const categoriasController = require('../controllers/categoriasController');
 const personasController = require('../controllers/personasController');
 const librosController = require('../controllers/librosController');
 
 router.use(express.json())
 router.use(express.urlencoded({ extended: true }))
-
-//Ruta para el home
-router.get('/', homeController.getHomePage);
 
 //Rutas Categorias
 router.get('/categoria',categoriasController.categoriaGet);
